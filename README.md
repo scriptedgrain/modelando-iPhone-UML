@@ -1,18 +1,68 @@
-## Getting Started
+## Autores
+- [Lucca Maia](https://github.com/scriptedgrain)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## POO - Desafio
 
-## Folder Structure
+### Meu Diagrama UML (Mermaid)
+```mermaid
+classDiagram
+    iPhone <|-- ReprodutorMusical
+    iPhone <|-- AparelhoTelefonico
+    iPhone <|-- NavegadorInternet
+    class iPhone {
+      int volume
+      int bateria
+      int brilho
+      boolean 
+      +ligar()
+      +desligar()
+      +carregarBateria()
+      +verificarBateria()
+      +desbloquear()
+    }
+    class ReprodutorMusical {
+      int tempoMusica
+      String album
+      String musicaAtual
+      boolean estadoReproducao
 
-The workspace contains two folders by default, where:
+      +tocar()
+      +pausar()
+      +selecionarMusica(String musica)
+      +classificarMusica()
+      +musicaAnterior()
+      +proximaMusica()
+      +mostrarDetalhesMusica()
+    }
+    class AparelhoTelefonico{
+      Map<String, String> contatos
+      List<String> historicoDeChamadas
+      boolean statusLigacao
+      boolean chamadaEmEspera
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+      +ligar(String numero)
+      +atender()
+      +iniciarCorreioVoz()
+      +listarContatos()
+      +verHistoricoDeChamadas()
+      +colocarEmEspera()
+      +retomarChamada()
+      +finalizarChamada()
+    }
+    class NavegadorInternet{
+      List<String> abasAbertas  
+      List<String> historico
+      String paginaAtual
+      boolean modoIncognito
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+      +exibirPagina(String url)
+      +adicionarNovaAba()
+      +atualizarPagina()
+      +fecharAba(int indice)
+      +navegarPara(String url)
+      +adicionarFavorito(String url)
+      +removerFavorito(String url)
+      +exibirFavoritos()
+      +buscar(String termo)
+    }
+```
